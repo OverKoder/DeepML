@@ -1,5 +1,6 @@
 import torch
 
+
 # Problem 884
 def grad_of_quadratic(x_value: float) -> float:
     # TODO: build a tracked leaf for x, compute f(x), run backprop, return df/dx as a float
@@ -10,5 +11,5 @@ def grad_of_quadratic(x_value: float) -> float:
 
     # Compute gradient
     y.backward()
-    
+
     return x.grad.item()

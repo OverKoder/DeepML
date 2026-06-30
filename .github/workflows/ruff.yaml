@@ -1,0 +1,22 @@
+name: Code format
+run-name: Running code checks and format
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Ruff-checker:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Running ruff code check and fix
+        uses: astral-sh/ruff-action@v3
+        with:
+          args: "check --fix"
+
+      - name: Running ruff code format
+        uses: astral-sh/ruff-action@v3
+        with:
+          args: "format"
